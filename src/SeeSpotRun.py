@@ -43,11 +43,11 @@ def r8k9(fileName='dog.jpg',score=10,length=10):
 	im_resized = cv2.resize(im, (224, 224), interpolation=cv2.INTER_LINEAR)
 	countdown = ["Ready?","3","2","1"]
 	#plt.imshow(cv2.cvtColor(im_resized, cv2.COLOR_BGR2RGB))
-	for i in range(4):
-		print(countdown[i])
-		time.sleep(1)
-	print("GO")
-	plt.show(block=False)
+	#for i in range(4):
+	#	print(countdown[i])
+	#	time.sleep(1)
+	#print("GO")
+	#plt.show(block=False)
 	t      = time.time()
 	td     = []
 	while time.time() < t + length:
@@ -120,8 +120,9 @@ def r8k9(fileName='dog.jpg',score=10,length=10):
 	#print(emotion_labels)
 	plt.clf()
 	plt.plot(td,data)
-	plt.savefig('Graph.png')
+	
 	plt.legend(['angry', 'disgust', 'fear','happy','sad','surprise','neutral'], loc = 2)
+	plt.savefig('Graph.png')
 	#splt.show()
 	totals = [0,0,0,0,0,0,0]
 	for j in range(7):
